@@ -60,11 +60,29 @@ To use with shrine object data
 
 <!-- Feature-->
 ## Feature
+- ✅   Auto-generate bounding box
+- ✅   Easy to customize new datasets
+- ✅   RoboFlow Support
+- ❌   Accurately object locolization
+- ❌   Automate multi-class images
 
 <!--Request Feature-->
 ## Request Feature
+### [DETR](https://github.com/facebookresearch/detr) Image Segmentation 
+to accurately locolize objects [Link]
+![image](https://user-images.githubusercontent.com/38836072/163730659-7c87c59e-b393-46d8-b277-a6920f734c92.png)
+
+#### Improving procedure
+1. Load background un-label data
+2. Use DETR on sample image (5%) to gain all mask class
+3. Load transparent image data
+4. Selected image data area based on mask class 
+5. Start random location of object on mask
+6. Generate YOLO bounding box format
+7. Happy with new DATA!
 
 <!-- Contact-->
+## Contact
 Saksorn Ruangtanusak - [Linkedin](https://www.linkedin.com/in/saksorn/)
 
 Project Link: [https://github.com/huak95/JUTI](https://github.com/huak95/JUTI)
