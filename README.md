@@ -21,9 +21,10 @@ Unbalanced datasets or unlabeled data are the most common problems encountered i
     ```
     pip install -r requirements.txt
     ```
-    
 <p align="right">(<a href="#top">back to top</a>)</p>
+
 ### DEMO Usage 
+
 To use with shrine object data
 
 1. Run Programme
@@ -66,6 +67,8 @@ To use with shrine object data
 - ❌   Accurately object locolization
 - ❌   Automate multi-class images
 
+<p align="right">(<a href="#top">back to top</a>)</p>
+
 <!--Request Feature-->
 ## Request Feature
 ### [DETR](https://github.com/facebookresearch/detr) Image Segmentation 
@@ -75,6 +78,8 @@ To accurately locolize objects. By using pre-trained on common object to segment
  <img width="300" src="https://user-images.githubusercontent.com/38836072/163730659-7c87c59e-b393-46d8-b277-a6920f734c92.png"></a>
 </div>
 
+<p align="right">(<a href="#top">back to top</a>)</p>
+
 #### Improving procedure
 1. Load background un-label data
 2. Use DETR on sample image (5%) to gain all mask class
@@ -83,6 +88,8 @@ To accurately locolize objects. By using pre-trained on common object to segment
 5. Start random location of object on mask
 6. Generate YOLO bounding box format
 7. Happy with new DATA!
+
+<p align="right">(<a href="#top">back to top</a>)</p>
 
 <!-- Contact-->
 ## Contact
