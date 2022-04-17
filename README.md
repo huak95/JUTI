@@ -21,6 +21,8 @@ Unbalanced datasets or unlabeled data are the most common problems encountered i
     ```
     pip install -r requirements.txt
     ```
+    
+<p align="right">(<a href="#top">back to top</a>)</p>
 ### DEMO Usage 
 To use with shrine object data
 
@@ -53,8 +55,16 @@ To use with shrine object data
 <div align="center">
  <img width="600" src="https://user-images.githubusercontent.com/38836072/163730009-6a24c508-c4b1-4d3f-b32a-dc99384115ac.png"></a>
 </div>
-   
-### Use on custom datasets
 
-1. Copy a background images to path `data/background/`
+<p align="right">(<a href="#top">back to top</a>)</p>
 
+<!-- Feature-->
+## Feature
+
+<!--Request Feature-->
+## Request Feature
+
+<!-- Contact-->
+Saksorn Ruangtanusak - [Linkedin](https://www.linkedin.com/in/saksorn/)
+
+Project Link: [https://github.com/huak95/JUTI](https://github.com/huak95/JUTI)
