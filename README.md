@@ -38,8 +38,7 @@ To use with shrine object data
 3. Click Finish Uploading
 4. Get labeled bounding box images Hoo Ray!
 
-![image](https://user-images.githubusercontent.com/38836072/163730009-6a24c508-c4b1-4d3f-b32a-dc99384115ac.png)
- 
+ <img width="850" src="https://user-images.githubusercontent.com/38836072/163730009-6a24c508-c4b1-4d3f-b32a-dc99384115ac.png"></a>
 ### Use on custom datasets
 
 1. Copy a background images to path `data/background/`
