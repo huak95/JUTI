@@ -69,8 +69,11 @@ To use with shrine object data
 <!--Request Feature-->
 ## Request Feature
 ### [DETR](https://github.com/facebookresearch/detr) Image Segmentation 
-to accurately locolize objects [Link]
-![image](https://user-images.githubusercontent.com/38836072/163730659-7c87c59e-b393-46d8-b277-a6920f734c92.png)
+To accurately locolize objects. By using pre-trained on common object to segment backgroud into diffrence mask class (floor, tree, sky, house). Then create a bounding box in a correct mask (eg. cctv object in house mask, shrine on floor mask)
+
+<div align="center">
+ <img width="300" src="https://user-images.githubusercontent.com/38836072/163730659-7c87c59e-b393-46d8-b277-a6920f734c92.png"></a>
+</div>
 
 #### Improving procedure
 1. Load background un-label data
