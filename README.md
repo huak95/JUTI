@@ -31,14 +31,29 @@ To use with shrine object data
     --object_path data/object/shrine/  \
     --images_num 10 
     ```
+#### Option for Argsparse
+
+`--background_path`: path of background images
+
+`--object_path`: path of object images
+
+`--images_num`: number of image to generate bounding box
+
+`--verbose`: Print when runing the functions or not
+
 2. Upload generated image (runs folder) to [RoboFlow](https://roboflow.com/)
 
-![image](https://user-images.githubusercontent.com/38836072/163729957-f3d99b5a-7a03-4176-a1f3-b9af5d22d9e1.png)
+<div align="center">
+ <img width="400" src="https://user-images.githubusercontent.com/38836072/163729957-f3d99b5a-7a03-4176-a1f3-b9af5d22d9e1.png"></a>
+</div>
 
 3. Click Finish Uploading
 4. Get labeled bounding box images Hoo Ray!
-
- <img width="850" src="https://user-images.githubusercontent.com/38836072/163730009-6a24c508-c4b1-4d3f-b32a-dc99384115ac.png"></a>
+   
+<div align="center">
+ <img width="600" src="https://user-images.githubusercontent.com/38836072/163730009-6a24c508-c4b1-4d3f-b32a-dc99384115ac.png"></a>
+</div>
+   
 ### Use on custom datasets
 
 1. Copy a background images to path `data/background/`
