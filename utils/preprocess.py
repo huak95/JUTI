@@ -43,17 +43,3 @@ def augment_image(img):
     img_scale = np.random.randint(80,120)/100
     img = resize_pil(img, scale=img_scale)
     return img
-
-# def equalize(im):
-#     h = im.convert("L").histogram()
-#     lut = []
-#     for b in range(0, len(h), 256):
-#         # step size
-#         step = reduce(operator.add, h[b:b+256]) / 255
-#         # create equalization lookup table
-#         n = 0
-#         for i in range(256):
-#             lut.append(n / step)
-#             n = n + h[i+b]
-#     # map image through lookup table
-#     return im.point(lut*im.layers)
