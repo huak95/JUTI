@@ -1,0 +1,7 @@
+tqdm
+pandas
+numpy
+Pillow
+tqdm
+opencv-python
+matplotlib
