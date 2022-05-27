@@ -28,7 +28,7 @@ def parse_args():
     return parser.parse_args()
 
 
-def generate_yolo_dataset_beta(BACKGROUND_PATH, OBJECT_PATH, n_images=10, verbose=True):
+def generate_yolo_dataset_beta(gen, BACKGROUND_PATH, OBJECT_PATH, n_images=10, verbose=True):
     '''
     Main Program of JUTI (JUst Train It)
     Create a full auto generation bounding box pipeline
