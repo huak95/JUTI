@@ -30,24 +30,78 @@ Unbalanced datasets or unlabeled data are the most common problems encountered i
 
 To use with shrine object data
 
-1. Run Programme
-    ```sh
-    python juti.py \
-    --background_path data/background/ \
-    --object_path data/object/shrine/  \
-    --images_num 10 
+1. Find background segmentation class
+
     ```
-#### Option for Argsparse
+    # import utils 
+    from utils.box_gen import *
+    from utils.path_help import *
+    from segment import FindLocation
+    import torch
 
-`--background_path`: path of background images
+    # Start finding all class labels
+    fl = FindLocation()
+    all_labels = fl.get_sample_labels(0.2, "data/background/")
 
-`--object_path`: path of object images
+    # view all labels
+    print("all_labels:", ", ".join(list(all_labels)))
+    ```
+    Results 
 
-`--images_num`: number of image to generate bounding box
+    > all_labels: sky, ceiling, house, earth, signboard, fence, building, road, sidewalk, water, plant, door, palm, tree, wall
 
-`--verbose`: Print when runing the functions or not
+2. Select background class for each object
+    ```
+    from segment import generate_data
 
-2. Upload generated image (runs folder) to [RoboFlow](https://roboflow.com/)
+    gen = generate_data(all_labels)
+    sel_df = gen.get_selected_df()
+
+    # Set backgound and object images size (in pixel)
+    gen.set_background_size(500)
+    gen.set_object_size(150)
+    ```
+<table border="1" class="dataframe" align="center">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>fg</th>
+      <th>bg</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>cat</td>
+      <td>[road,earth]</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>dog</td>
+      <td>[road]</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>raccoon</td>
+      <td>[road,sidewalk]</td>
+    </tr>
+  </tbody>
+</table>
+
+3. Inference JUTI
+```
+    from juti import generate_yolo_dataset_beta
+
+    label_select = 'raccoon'
+
+    generate_yolo_dataset_beta(gen, 
+                               f"data/background/", 
+                               f"data/object/{label_select}/", 
+                               n_images=10, 
+                               verbose=False)
+```
+
+4. Upload generated image (runs folder) to [RoboFlow](https://roboflow.com/)
 
 <div align="center">
  <img width="400" src="https://user-images.githubusercontent.com/38836072/163729957-f3d99b5a-7a03-4176-a1f3-b9af5d22d9e1.png"></a>
@@ -67,13 +121,13 @@ To use with shrine object data
 - ✅   Auto-generate bounding box
 - ✅   Easy to customize new datasets
 - ✅   RoboFlow Support
-- ❌   Accurately object locolization
+- ✅   Accurately object locolization
 - ❌   Automate multi-class images
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 <!--Request Feature-->
-## Request Feature
+## JUTI v 2.0 Feature
 ### [DETR](https://github.com/facebookresearch/detr) Image Segmentation 
 To accurately locolize objects. By using pre-trained on common object to segment backgroud into diffrence mask class (floor, tree, sky, house). Then create a bounding box in a correct mask (eg. cctv object in house mask, shrine on floor mask)
 
