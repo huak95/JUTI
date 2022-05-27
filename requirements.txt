@@ -5,3 +5,4 @@ Pillow
 tqdm
 opencv-python
 matplotlib
+transformers[torch]
