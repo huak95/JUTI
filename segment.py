@@ -204,7 +204,7 @@ class FindLocation:
 class generate_data():
 
     def __init__(self, all_labels, test=False):
-        fg_labels = sorted(os.listdir("/home/saksorn/JUTI/data/object"))
+        fg_labels = sorted(os.listdir("data/object"))
         bg_labels = all_labels.copy()
         select_bg_labels = []
 
