@@ -27,7 +27,7 @@ def parse_args():
     return parser.parse_args()
 
 
-def generate_yolo_dataset(BACKGROUND_PATH, OBJECT_PATH, n_images=10, verbose=True):
+def generate_yolo_dataset_beta(BACKGROUND_PATH, OBJECT_PATH, n_images=10, verbose=True):
     '''
     Main Program of JUTI (JUst Train It)
     Create a full auto generation bounding box pipeline
@@ -35,7 +35,7 @@ def generate_yolo_dataset(BACKGROUND_PATH, OBJECT_PATH, n_images=10, verbose=Tru
     # Background
     all_background_dirs = get_dirs_sorted(BACKGROUND_PATH)
     background_dirs = all_background_dirs.sample(n_images)
-    n_bg = len(all_background_dirs)
+    n_bg = len(background_dirs)
 
     # Object
     object_name  = OBJECT_PATH.split("/")[-2]
@@ -55,13 +55,23 @@ def generate_yolo_dataset(BACKGROUND_PATH, OBJECT_PATH, n_images=10, verbose=Tru
 
     # Loop each background to create a merged images
     img_list, loc_list = [], []
-    for idx, path_bg in enumerate(background_dirs):
+    # print(background_dirs)
+    seg_images, labels = fl.segment_from_list(background_dirs.to_list(), False)
+    
+    for idx in tqdm(range(len(background_dirs))):
+        path_bg = background_dirs.values[idx]
         path_fg = all_object_dirs.sample(1).values[0]
-        img_merged, loc = gen_box(path_bg, path_fg)
-
-        # Save to list
-        img_list.append(img_merged)
-        loc_list.append(loc)
+        # print(path_bg, path_fg)
+        img_merged, loc = gen.gen_box_beta(seg_images[idx], path_bg, path_fg, verbose)
+        
+        if type(loc) != list:
+            print("Skipp")
+            continue
+        
+        else:
+            # Save to list
+            img_list.append(img_merged)
+            loc_list.append(loc)
 
     # Save File
     save_image(img_list, PATH = save_path+"/images")
