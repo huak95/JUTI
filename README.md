@@ -28,7 +28,7 @@ Unbalanced datasets or unlabeled data are the most common problems encountered i
 
 ### DEMO Usage 
 
-To use with shrine object data
+To use with raccoon object data
 
 1. Find background segmentation class
 
@@ -104,14 +104,14 @@ To use with shrine object data
 4. Upload generated image (runs folder) to [RoboFlow](https://roboflow.com/)
 
 <div align="center">
- <img width="400" src="https://user-images.githubusercontent.com/38836072/163729957-f3d99b5a-7a03-4176-a1f3-b9af5d22d9e1.png"></a>
+ <img width="400" src="https://user-images.githubusercontent.com/38836072/170632651-0a5ffcaf-2a01-4365-9a56-8f0df5ee7596.png"></a>
 </div>
 
 3. Click Finish Uploading
 4. Get labeled bounding box images Hoo Ray!
    
 <div align="center">
- <img width="600" src="https://user-images.githubusercontent.com/38836072/163730009-6a24c508-c4b1-4d3f-b32a-dc99384115ac.png"></a>
+ <img width="600" src="https://user-images.githubusercontent.com/38836072/170632921-c2c28c39-a457-4c7f-af28-00e91a47b489.png"></a>
 </div>
 
 <p align="right">(<a href="#top">back to top</a>)</p>
