@@ -39,7 +39,7 @@ def imsize(imgpath):
 def augment_image(img):
     if np.random.randint(2):
         img = ImageOps.mirror(img)
-    img = img.rotate(np.random.randint(-5,5))
+    img = img.rotate(np.random.randint(-20,20))
     img_scale = np.random.randint(80,120)/100
     img = resize_pil(img, scale=img_scale)
     return img
