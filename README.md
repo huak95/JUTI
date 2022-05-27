@@ -12,7 +12,10 @@ Unbalanced datasets or unlabeled data are the most common problems encountered i
 
 <!-- GETTING STARTED -->
 ## Getting Started
-### Setup
+### Colab Pre-Setup
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/huak95/JUTI/blob/main/JUTI_DEMO_COLAB.ipynb)
+
+### Local Setup
 1. Clone the repo
    ```
    git clone https://github.com/huak95/JUTI.git
