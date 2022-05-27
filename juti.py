@@ -1,6 +1,7 @@
 import argparse
 from utils.box_gen import *
 from utils.path_help import *
+from segment import FindLocation
 
 def parse_args():
     """
@@ -56,6 +57,8 @@ def generate_yolo_dataset_beta(BACKGROUND_PATH, OBJECT_PATH, n_images=10, verbos
     # Loop each background to create a merged images
     img_list, loc_list = [], []
     # print(background_dirs)
+    fl = FindLocation()
+
     seg_images, labels = fl.segment_from_list(background_dirs.to_list(), False)
     
     for idx in tqdm(range(len(background_dirs))):
